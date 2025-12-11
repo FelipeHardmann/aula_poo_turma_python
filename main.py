@@ -4,8 +4,8 @@ Qual valor ele vai depositar, qual valor ele vai sacar da conta e as transferên
 entre contas, conta corrente e faz pix para uma pessoa que tem conta Poupança
 '''
 
-from conta_corrente import ContaCorrente
-from conta_poupaca import ContaPoupanca
+from schemas.conta_corrente import ContaCorrente
+from schemas.conta_poupaca import ContaPoupanca
 from random import randint
 
 

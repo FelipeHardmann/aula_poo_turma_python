@@ -1,4 +1,4 @@
-from conta import Conta
+from schemas.conta import Conta
 
 
 class ContaCorrente(Conta):
