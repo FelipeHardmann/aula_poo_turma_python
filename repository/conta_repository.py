@@ -30,8 +30,7 @@ class ContaRepository:
         """Lista todas as contas"""
         self.db.connect()
         query = "SELECT * FROM contas"
-        self.db.execute(query)
-        contas = self.db.fetchall()
+        contas = self.db.fetchall(query)
         self.db.close()
         return contas
     
@@ -39,8 +38,7 @@ class ContaRepository:
         """Busca uma conta por ID"""
         self.db.connect()
         query = "SELECT * FROM contas WHERE id = %s"
-        self.db.execute(query, (conta_id,))
-        conta = self.db.fetchall()
+        conta = self.db.fetchall(query, (conta_id,))
         self.db.close()
         return conta[0] if conta else None
     

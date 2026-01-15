@@ -3,11 +3,11 @@ from typing import Optional
 
 class MySQLConfig:
     """Configurações centralizadas do MySQL"""
-    HOST = 'localhost'
-    USER = 'root'
-    PASSWORD = 'Felipe2015#'
-    DATABASE = 'banco_digital'
-    PORT = 3306
+    HOST = 'localhost' # 'aws-postgresql-001.c3nwwjzswu6u.us-east-1.rds.amazonaws.com' exemploooooo!!!!!!!
+    USER = 'root' # 'admin' exemploooooo!!!!!!!
+    PASSWORD = 'Felipe2015#' # 'senhaadmin123' exemploooooo!!!!!!!
+    DATABASE = 'banco_digital' # 'aws_postgresql_001' exemploooooo!!!!!!!
+    PORT = 3306 # 5432 exemploooooo!!!!!!!
 
 class MySQLConnect:
     def __init__(self, 
@@ -49,7 +49,8 @@ class MySQLConnect:
         except Exception as e:
             print(f'Erro: {e}')
     
-    def fetchall(self):
+    def fetchall(self, query, params: tuple = None):
+        self.cursor.execute(query, params or ())
         return self.cursor.fetchall()
     
     def close(self):
